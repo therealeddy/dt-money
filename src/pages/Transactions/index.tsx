@@ -1,12 +1,11 @@
 import React from 'react'
-import { Header } from '../../components'
-
-// import { Container } from './styles';
+import { Header, Summary } from '../../components'
 
 const Transactions: React.FC = () => {
   return (
     <div>
       <Header />
+      <Summary />
     </div>
   )
 }
