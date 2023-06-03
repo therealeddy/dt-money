@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { useContextSelector } from 'use-context-selector'
 import { MagnifyingGlass } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
@@ -14,7 +14,7 @@ const searchFormSchema = z.object({
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
-const SearchForm: React.FC = () => {
+const SearchFormComponent: React.FC = () => {
   const fetchTransactions = useContextSelector(
     TransactionsContext,
     (context) => {
@@ -49,5 +49,7 @@ const SearchForm: React.FC = () => {
     </SearchFormContainer>
   )
 }
+
+const SearchForm = memo(SearchFormComponent)
 
 export default SearchForm
